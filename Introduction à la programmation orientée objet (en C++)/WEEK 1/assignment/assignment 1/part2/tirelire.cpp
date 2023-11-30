@@ -4,10 +4,6 @@ using namespace std;
 /*******************************************
  * Complétez le programme à partir d'ici.
  *******************************************/
-
-/*******************************************
- * Ne rien modifier après cette ligne.
- *******************************************/
 class Tirelire
 {
 private:
@@ -91,6 +87,11 @@ public:
 
 
 };
+
+/*******************************************
+ * Ne rien modifier après cette ligne.
+ *******************************************/
+
 int main()
 {
   Tirelire piggy;
@@ -123,20 +124,15 @@ int main()
   // vacances
   double solde(0.0);
 
-  if (piggy.montant_suffisant(budget, solde))
-  {
+  if (piggy.montant_suffisant(budget, solde)) {
     cout << "Vous êtes assez riche pour partir en vacances !"
          << endl
          << "Il vous restera " << solde << " euros"
-         << " à la rentrée." << endl
-         << endl;
+         << " à la rentrée." << endl << endl;
     piggy.puiser(budget);
-  }
-  else
-  {
+  } else {
     cout << "Il vous manque " << solde << " euros"
-         << " pour partir en vacances !" << endl
-         << endl;
+         << " pour partir en vacances !" << endl << endl;
   }
   return 0;
 }
