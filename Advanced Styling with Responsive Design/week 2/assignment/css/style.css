@@ -34,17 +34,20 @@ p{
 }
 
 div img{
-    width:150px;
-    height: 150px;
+    min-width:150px;
+ 
+    min-height: 150px;
     display:block;
     margin:auto;
 }
 
 div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
+  display:inline-block;
+  width: 90%;
+  
+  margin: 10px;
   padding: 2px;
+
 }
 
 
@@ -55,6 +58,7 @@ div{
 @media (min-width: 772px) {
     div {
       width: 45%;
+     
     }
   
     div img {
