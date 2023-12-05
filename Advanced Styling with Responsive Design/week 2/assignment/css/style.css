@@ -57,7 +57,7 @@ div{
 
 @media (min-width: 772px) {
     div {
-      width: 45vh;
+      width: 45vw;
      
     }
   
@@ -69,7 +69,7 @@ div{
   /* Media query for 998px */
   @media (min-width: 998px) {
     div {
-      width: 30vh;
+      width: 30vw;
 
     }
   }
