@@ -1,0 +1,240 @@
+✨The `prefers-reduced-motion` media query 
+is a feature in CSS that allows websites to adapt their UI and animations based 
+on the user's preference for reduced motion. This is particularly useful for
+ users who may experience discomfort or nausea when exposed to excessive motion
+  effects on websites. Here's a comprehensive overview of the `prefers-reduced-motion`
+   media query:
+
+### 1. Syntax:
+```css
+@media (prefers-reduced-motion: value) {
+  /* CSS styles to apply when the prefers-reduced-motion condition is met */
+}
+```
+
+### 2. Possible Values:
+- `no-preference`: The user has not expressed a preference for reduced motion.
+- `reduce`: The user prefers reduced motion. In this case, 
+websites should minimize or eliminate non-essential motion effects.
+
+### 3. Use Case:
+The `prefers-reduced-motion` media query is commonly 
+used to adjust or disable certain animations, transitions, 
+or scroll effects on a website based on the user's motion preferences.
+
+### 4. Example Usage:
+```css
+/* Apply styles when motion is not reduced */
+@media (prefers-reduced-motion: no-preference) {
+  /* Styles for regular motion */
+}
+
+/* Apply styles when motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+  /* Styles for reduced motion */
+}
+```
+
+### 5. Example Implementation:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduced Motion Example</title>
+  <style>
+    /* Regular animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Apply animation unless motion is reduced */
+    @media (prefers-reduced-motion: no-preference) {
+      .box {
+        animation: bounce 2s infinite;
+      }
+    }
+
+    /* No animation when motion is reduced */
+    @media (prefers-reduced-motion: reduce) {
+      .box {
+        animation: none;
+      }
+    }
+
+    /* Other styles for the box */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
+```
+
+In this example, the animation is applied by default, but it's disabled 
+when the user prefers reduced motion.
+
+### 6. Browser Support:
+Most modern browsers support the `prefers-reduced-motion` media query, 
+including Chrome, Firefox, Safari, and Edge.
+
+### 7. Considerations:
+- Always strive to create accessible and inclusive designs.
+- Test your website with reduced motion settings enabled to ensure a
+ positive user experience for all.
+
+Remember that browser features and standards may evolve, 
+so it's a good practice to check the latest documentation for any updates.
+
+
+
+/* Other styles for the box */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+
+}
+
+
+✨`prefers-color-scheme` media query is a CSS feature that allows websites to adapt
+ their styles based on the user's preferred color scheme, whether it's light or
+  dark mode. This is useful for providing a more comfortable reading experience 
+  in different lighting conditions. Here's a comprehensive overview of the 
+  `prefers-color-scheme` media query:
+
+### 1. Syntax:
+```css
+@media (prefers-color-scheme: value) {
+  /* CSS styles to apply when the prefers-color-scheme condition is met */
+}
+```
+
+### 2. Possible Values:
+- `light`: The user prefers a light color scheme.
+- `dark`: The user prefers a dark color scheme.
+- `no-preference`: The user has not expressed a preference for light or dark mode.
+
+### 3. Use Case:
+The `prefers-color-scheme` media query is commonly used to adjust the color
+ scheme of a website based on the user's preference, providing a visually appealing
+  experience in both light and dark modes.
+
+### 4. Example Usage:
+```css
+/* Apply styles for light mode */
+@media (prefers-color-scheme: light) {
+  /* Light mode styles */
+}
+
+/* Apply styles for dark mode */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles */
+}
+```
+
+### 5. Example Implementation:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Scheme Example</title>
+  <style>
+    /* Apply light mode styles by default */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* Apply dark mode styles when prefers-color-scheme is dark */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #333333;
+        color: #ffffff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <p>This is a simple example of the prefers-color-scheme media query.</p>
+</body>
+</html>
+```
+
+In this example, the background and text colors are adjusted based 
+on the user's preferred color scheme.
+
+### 6. Browser Support:
+Most modern browsers support the `prefers-color-scheme` media query,
+ including Chrome, Firefox, Safari, and Edge.
+
+### 7. Considerations:
+- Test your website in both light and dark mode to ensure a visually 
+consistent and pleasant experience.
+- Provide appropriate contrast in your color schemes for readability.
+
+### 8. Browser Extensions:
+Some browser extensions, like "Dark Reader," can override the system's
+ color scheme, allowing you to test how your website looks in different modes.
+
+### 9. Implementation in JavaScript:
+You can also use JavaScript to dynamically update styles based 
+on the user's color scheme preference.
+
+```javascript
+<script>
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (prefersDarkMode) {
+  // Apply dark mode styles
+  document.body.classList.add('dark-mode');
+}
+</script>
+```
+
+In this JavaScript example, a `dark-mode` class is added to the `body` 
+element when the user prefers a dark color scheme.
+
+Remember that browser features and standards may evolve, 
+so it's a good practice to check the latest documentation for any updates.
+
+
+<!-- example  -->
+<style>
+
+@media (prefers-color-scheme: light) {
+  /* Light mode styles */
+
+          body{
+              background-color: green;
+          
+           color: red;
+          }
+}
+
+/* Apply styles for dark mode */
+@media (prefers-color-scheme: dark) {
+ body{
+          background-color: black;
+          color: white;
+       }
+}
+
+</style>
