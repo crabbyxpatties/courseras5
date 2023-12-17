@@ -1,29 +1,47 @@
 #include <iostream>
-
 using namespace std;
 
-class Number {
+class Rect {
 private:
-    int n;
+    double width, height;
 public:
-    Number() 
-      : n(0) 
-    { std::cout << n; }
-    Number( int nn )
-      : n(nn)
-    { std::cout << n; }
-    Number(Number const& otherNum)
-      : n(otherNum.n+1)
-    { std::cout << n; }
-    void display() { std::cout << n; }
-    void increase() { n += 1; }
+    double getWidth() const { ... }
+    double getHeight() const { ... }
 };
 
-int main()
+class ColoredRect : public Rect {
+protected:
+    int color;
+    void init();
+public:
+    double getSurface() const { ... }
+    int getColor() const { ... }
+};
+int main( ... )
 {
-    Number a, b(1), c(b);
-    b.increase();
-    c.display();
-    b.display();
-    return 0;
+
+Rect r; r.init();
+
+
+ColoredRect cr; cr.init();
+
+
+ColoredRect cr; cr.getWidth();
+
+
+ColoredRect cr; cr.width;
+
+
+ColoredRect cr; cr.getColor();
+
+
+ColoredRect cr; cr.getSurface();
+
+
+ColoredRect cr; cr.getHeight();
+
+
+Rect r; r.getSurface();
+
+ return 0; 
 }
