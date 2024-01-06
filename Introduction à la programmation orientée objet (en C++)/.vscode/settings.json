@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.sql": "oraclesql",
-        "iosfwd": "cpp"
-    }
-}
